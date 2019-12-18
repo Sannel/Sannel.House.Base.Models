@@ -20,7 +20,7 @@ steps:
   displayName: 'dotnet restore'
   inputs:
     command: custom
-    packagesToPack: 'src/**/*.csproj'
+    packagesToPack: 'src/Sannel.House.Base.Models/Sannel.House.Base.Models.csproj'
     custom: restore
     arguments: '--configfile .nuget/nuget.config'
     feedsToUse: config

@@ -11,11 +11,12 @@
 	  <Company>Sannel Software, L.L.C.</Company>
 	  <Description>Base Models used by different layers of Sannel.House</Description>
 	  <PackageLicenseUrl></PackageLicenseUrl>
-	  <PackageProjectUrl>https://github.com/Sannel/Sannel.House.Common</PackageProjectUrl>
+	  <PackageProjectUrl>https://github.com/Sannel/Sannel.House.Base.Models</PackageProjectUrl>
 	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	  <PackageId>Sannel.House.Base.Models</PackageId>
 	  <Product>Sannel.House.Base.Models</Product>
 	  <PackageLicenseFile>LICENSE</PackageLicenseFile>
+	  <RepositoryUrl>https://github.com/Sannel/Sannel.House.Base.Models</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>

@@ -29,9 +29,9 @@ steps:
 - task: DotNetCoreCLI@2
   displayName: 'dotnet publish'
   inputs:
-    command: publish
+    command: 'publish'
     publishWebProjects: false
-    packagesToPack: 'src/Sannel.House.Base.Models/Sannel.House.Base.Models.csproj'
+    projects: 'src/Sannel.House.Base.Models/Sannel.House.Base.Models.cspro'
     arguments: '-o $(Build.StagingDirectory)/netstandard2.0 -f netstandard2.0'
     zipAfterPublish: false
 - task: DotNetCoreCLI@2
@@ -39,7 +39,7 @@ steps:
   inputs:
     command: publish
     publishWebProjects: false
-    packagesToPack: 'src/Sannel.House.Base.Models/Sannel.House.Base.Models.csproj'
+    projects: 'src/Sannel.House.Base.Models/Sannel.House.Base.Models.cspro'
     arguments: '-o $(Build.StagingDirectory)/netstandard2.1 -f netstandard2.1'
     zipAfterPublish: false
 - task: DotNetCoreCLI@2
@@ -47,7 +47,7 @@ steps:
   inputs:
     command: publish
     publishWebProjects: false
-    packagesToPack: 'src/Sannel.House.Base.Models/Sannel.House.Base.Models.csproj'
+    projects: 'src/Sannel.House.Base.Models/Sannel.House.Base.Models.cspro'
     arguments: '-o $(Build.StagingDirectory)/netcoreapp3.1 -f netcoreapp3.1'
     zipAfterPublish: false
 - task: DotNetCoreCLI@2

@@ -18,6 +18,9 @@ using System.Text;
 namespace Sannel.House.Base.Models
 {
 	public interface IPagedResponse<T>
+#if NET5_0 || NETSTANDARD2_1 || NETCOREAPP3_1
+		where T : notnull
+#endif
 	{
 		/// <summary>
 		/// Gets or sets the data.

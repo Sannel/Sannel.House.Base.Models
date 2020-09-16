@@ -19,6 +19,18 @@
 		<RepositoryUrl>https://github.com/Sannel/Sannel.House.Base.Models</RepositoryUrl>
 	</PropertyGroup>
 
+	<PropertyGroup Condition="'$(TargetFramework)' == 'net5.0'">
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.1'">
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
 	<ItemGroup Condition="'$(TargetFramework)' != 'net5.0'">
 		<PackageReference Include="System.Text.Json" Version="4.7.2" />
 	</ItemGroup>

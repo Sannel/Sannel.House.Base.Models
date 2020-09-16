@@ -53,6 +53,9 @@ namespace Sannel.House.Base.Models
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
 	public interface IResponse<T> : IResponse
+#if NET5_0 || NETSTANDARD2_1 || NETCOREAPP3_1
+		where T : notnull
+#endif
 	{
 		/// <summary>
 		/// Gets or sets the data.

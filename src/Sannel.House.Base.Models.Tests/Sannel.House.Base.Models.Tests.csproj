@@ -6,6 +6,10 @@
 		<IsPackable>false</IsPackable>
 	</PropertyGroup>
 
+	<PropertyGroup Condition="'$(TargetFramework)' == 'net5.0'">
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
 	<ItemGroup>
 		<PackageReference Include="xunit" Version="2.4.1" />
 		<PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">

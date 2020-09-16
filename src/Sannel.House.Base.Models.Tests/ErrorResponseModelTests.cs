@@ -26,7 +26,7 @@ namespace Sannel.House.Base.Models.Tests
 		{
 			var r = new ErrorResponseModel();
 			Assert.Equal(200, r.Status);
-			Assert.Null(r.Title);
+			Assert.Equal(string.Empty, r.Title);
 			Assert.NotNull(r.Errors);
 			Assert.Empty(r.Errors);
 		}
@@ -36,13 +36,13 @@ namespace Sannel.House.Base.Models.Tests
 		{
 			var r = new ErrorResponseModel(3);
 			Assert.Equal(3, r.Status);
-			Assert.Null(r.Title);
+			Assert.Equal(string.Empty, r.Title);
 			Assert.NotNull(r.Errors);
 			Assert.Empty(r.Errors);
 
 			r = new ErrorResponseModel(HttpStatusCode.Ambiguous);
 			Assert.Equal(300, r.Status);
-			Assert.Null(r.Title);
+			Assert.Equal(string.Empty, r.Title);
 			Assert.NotNull(r.Errors);
 			Assert.Empty(r.Errors);
 		}

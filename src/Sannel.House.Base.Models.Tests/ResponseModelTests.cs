@@ -26,7 +26,7 @@ namespace Sannel.House.Base.Models.Tests
 		{
 			var r = new ResponseModel();
 			Assert.Equal(200, r.Status);
-			Assert.Null(r.Title);
+			Assert.Equal(string.Empty, r.Title);
 		}
 
 		[Fact]
@@ -34,12 +34,12 @@ namespace Sannel.House.Base.Models.Tests
 		{
 			var r = new ResponseModel(300);
 			Assert.Equal(300, r.Status);
-			Assert.Null(r.Title);
+			Assert.Equal(string.Empty, r.Title);
 
 			r = new ResponseModel(HttpStatusCode.Gone);
 			Assert.Equal(410, r.Status);
 			Assert.Equal(HttpStatusCode.Gone, r.StatusCode);
-			Assert.Null(r.Title);
+			Assert.Equal(string.Empty, r.Title);
 		}
 		
 		[Fact]
@@ -54,46 +54,35 @@ namespace Sannel.House.Base.Models.Tests
 			Assert.Equal("Title 1", r.Title);
 		}
 
-		[Fact]
-		public void ConstructorTest4()
-		{
-			var r = new ResponseModel<string>();
-			Assert.Equal(200, r.Status);
-			Assert.Null(r.Title);
-			Assert.Null(r.Data);
-
-			var r1 = new ResponseModel<int>();
-			Assert.Equal(200, r1.Status);
-			Assert.Null(r1.Title);
-			Assert.Equal(default(int), r1.Data);
-		}
 
 		[Fact]
 		public void ConstructorTest5()
 		{
-			var r = new ResponseModel<string>(300);
+			var data = Guid.NewGuid().ToString();
+			var r = new ResponseModel<string>(300, data);
 			Assert.Equal(300, r.Status);
-			Assert.Null(r.Title);
-			Assert.Null(r.Data);
+			Assert.Equal(string.Empty, r.Title);
+			Assert.Equal(data, r.Data);
 
-			r = new ResponseModel<string>(HttpStatusCode.MultiStatus);
+			data = Guid.NewGuid().ToString();
+			r = new ResponseModel<string>(HttpStatusCode.MultiStatus, data);
 			Assert.Equal(207, r.Status);
-			Assert.Null(r.Title);
-			Assert.Null(r.Data);
+			Assert.Equal(string.Empty, r.Title);
+			Assert.Equal(data, r.Data);
 		}
 		
 		[Fact]
 		public void ConstructorTest6()
 		{
-			var r = new ResponseModel<string>(400, "Title 1");
+			var r = new ResponseModel<string>(400, "Title 1", "SimpleData");
 			Assert.Equal(400, r.Status);
 			Assert.Equal("Title 1", r.Title);
-			Assert.Null(r.Data);
+			Assert.Equal("SimpleData", r.Data);
 
-			r = new ResponseModel<string>(HttpStatusCode.NetworkAuthenticationRequired, "Title 1");
+			r = new ResponseModel<string>(HttpStatusCode.NetworkAuthenticationRequired, "Title 1", "SimpleData");
 			Assert.Equal(511, r.Status);
 			Assert.Equal("Title 1", r.Title);
-			Assert.Null(r.Data);
+			Assert.Equal("SimpleData", r.Data);
 		}
 		
 		[Fact]
@@ -124,7 +113,7 @@ namespace Sannel.House.Base.Models.Tests
 		{
 			var r = new ResponseModel<long>(300L);
 			Assert.Equal(200, r.Status);
-			Assert.Null(r.Title);
+			Assert.Equal(string.Empty, r.Title);
 			Assert.Equal(300, r.Data);
 		}
 	}

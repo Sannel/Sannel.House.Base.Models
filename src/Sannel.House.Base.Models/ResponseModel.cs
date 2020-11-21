@@ -1,4 +1,4 @@
-/* Copyright 2019 Sannel Software, L.L.C.
+/* Copyright 2019-2020 Sannel Software, L.L.C.
 
    Licensed under the Apache License, Version 2.0 (the ""License"");
    you may not use this file except in compliance with the License.
@@ -94,9 +94,6 @@ namespace Sannel.House.Base.Models
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
 	public class ResponseModel<T> : ResponseModel, IResponse<T>
-#if NET5_0 || NETSTANDARD2_1 || NETCOREAPP3_1
-		where T : notnull
-#endif
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ResponseModel{T}"/> class.
